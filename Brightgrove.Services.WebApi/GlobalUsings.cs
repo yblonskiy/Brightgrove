@@ -1,0 +1,14 @@
+﻿global using Autofac;
+global using AutoMapper.Contrib.Autofac.DependencyInjection;
+global using Brightgrove.CoreLibrary.Configuration;
+global using Brightgrove.CoreLibrary.DI;
+global using Brightgrove.CoreLibrary.Models.Base;
+global using Brightgrove.CoreLibrary.Models.Errors;
+global using Brightgrove.IntegrationServices.DI;
+global using Brightgrove.Models.Matches;
+global using Brightgrove.Models.Matches.Input;
+global using Brightgrove.Services.Contracts.Matches;
+global using Brightgrove.Services.DI;
+global using Brightgrove.Services.Mappings.DI;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.Extensions.Options;

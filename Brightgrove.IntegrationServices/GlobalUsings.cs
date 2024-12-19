@@ -1,0 +1,9 @@
+﻿global using Autofac;
+global using Brightgrove.CoreLibrary.Configuration;
+global using Brightgrove.IntegrationServices.Contracts.FootballData;
+global using Brightgrove.IntegrationServices.Models.FootballData.Input;
+global using Brightgrove.IntegrationServices.Models.FootballData.Match;
+global using Microsoft.Extensions.Logging;
+global using Microsoft.Extensions.Options;
+global using Newtonsoft.Json;
+global using System.Net.Http.Headers;

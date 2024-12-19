@@ -1,0 +1,12 @@
+﻿global using Autofac;
+global using AutoMapper;
+global using Brightgrove.CoreLibrary.Configuration;
+global using Brightgrove.CoreLibrary.Models.Base;
+global using Brightgrove.CoreLibrary.Services;
+global using Brightgrove.IntegrationServices.Contracts.FootballData;
+global using Brightgrove.IntegrationServices.Models.FootballData.Input;
+global using Brightgrove.Models.Matches;
+global using Brightgrove.Models.Matches.Input;
+global using Brightgrove.Services.Contracts.Matches;
+global using Microsoft.Extensions.Logging;
+global using Microsoft.Extensions.Options;

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\Matches\Input\**" />
+    <Content Remove="Models\Matches\Input\**" />
+    <EmbeddedResource Remove="Models\Matches\Input\**" />
+    <None Remove="Models\Matches\Input\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\Matches\Competition.cs" />
+    <Compile Remove="Models\Matches\CompetitionItem.cs" />
+    <Compile Remove="Models\Matches\MatchItem.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Brightgrove.Services.ServiceAgent\Brightgrove.Services.ServiceAgent.csproj" />
+  </ItemGroup>
+
+</Project>

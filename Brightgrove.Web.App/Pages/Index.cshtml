@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col text-center">
+            <button class="btn btn-sm btn-outline-success" type="button" id="btnRecentMatches">Recent Matches</button>&nbsp;
+            <button class="btn btn-sm btn-success" type="button" id="btnUpcomingMatches">Upcoming Matches</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" id="pnlRecentCompetitions">
+            @foreach (var match in Model.CompetitionsMatches.RecentCompetitions)
+            {
+                @await Component.InvokeAsync("Competition", match)
+            }
+        </div>
+        <div class="col" id="pnlUpcomingCompetitions">
+            @foreach (var match in Model.CompetitionsMatches.UpcomingCompetitions)
+            {
+                @await Component.InvokeAsync("Competition", match)
+            }
+        </div>
+    </div>
+</div>
