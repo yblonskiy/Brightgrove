@@ -21,14 +21,6 @@ body {
   margin-bottom: 60px;
 }
 
-.carousel-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-}
-
 .carousel-container {
     overflow: hidden;
     width: 100%;
@@ -39,6 +31,7 @@ body {
 .carousel {
     display: flex;
     transition: transform 0.3s ease;
+    position: relative;
 }
 
 .match-item-card {
@@ -56,3 +49,4 @@ body {
     width: 17px;
     height: auto;
 }
+
