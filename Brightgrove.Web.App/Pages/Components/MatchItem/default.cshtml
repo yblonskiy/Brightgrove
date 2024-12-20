@@ -3,26 +3,26 @@
 <div class="match-item-card card border-success">
     <div class="card-body border-secondary">
 
-        <h6 class="card-subtitle mb-4 text-muted">@Model.UtcDate.ToLocalTime().ToString("dd.MM | HH:mm")</h6>
+        <h6 class="league-name">@Model.UtcDate.ToLocalTime().ToString("dd.MM | HH:mm")</h6>
 
         <div class="row">
-            <div class="col-1"><img class="team-logo card-subtitle mb-2" src="@Model.HomeTeam.Crest" /></div>
-            <div class="col-9"> <h6 class="card-subtitle mb-2 text-muted">@Model.HomeTeam.Name</h6></div>
+            <div class="col-1"><img class="team-logo" alt="@Model.HomeTeam.Name" src="@Model.HomeTeam.Crest" /></div>
+            <div class="col-9"> <h6 class="team-title">@Model.HomeTeam.Name</h6></div>
 
             @if (!string.IsNullOrEmpty(Model.Score.Winner))
             {
-                <div class="col-2"><h6 class="card-subtitle mb-2 text-muted">@Model.Score.FullTime.Home</h6></div>
+                <div class="col-2"><h6 class="team-title">@Model.Score.FullTime.Home</h6></div>
             }
 
         </div>
 
         <div class="row">
-            <div class="col-1"><img class="team-logo card-subtitle mb-2" src="@Model.AwayTeam.Crest" /></div>
-            <div class="col-9"><h6 class="card-subtitle mb-2 text-muted">@Model.AwayTeam.Name</h6></div>
+            <div class="col-1"><img class="team-logo" alt="@Model.AwayTeam.Name" src="@Model.AwayTeam.Crest" /></div>
+            <div class="col-9"><h6 class="team-title">@Model.AwayTeam.Name</h6></div>
             
             @if(!string.IsNullOrEmpty(Model.Score.Winner))
             {
-                <div class="col-2"><h6 class="card-subtitle mb-2 text-muted">@Model.Score.FullTime.Away</h6></div>
+                <div class="col-2"><h6 class="team-titled">@Model.Score.FullTime.Away</h6></div>
             }
             
         </div>
