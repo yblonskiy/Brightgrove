@@ -1,3 +1,4 @@
+using Autofac.Core;
 using Brightgrove.Web.App.Services;
 
 var builder = WebApplication.CreateBuilder(args);
