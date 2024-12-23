@@ -20,3 +20,8 @@
 The App and API projects are deployed on Azure:
  - https://brightgrovewebapp20241220220142.azurewebsites.net
  - https://brightgroveserviceswebapi20241220221247.azurewebsites.net (swagger is accessed via swagger/index.html)
+
+6. Performance:
+
+   ![image](https://github.com/user-attachments/assets/8d355b44-9873-4eed-93e9-aab74be310e4)
+
