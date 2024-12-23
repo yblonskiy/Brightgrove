@@ -1,7 +1,3 @@
-using Brightgrove.Web.App.Models.Matches;
-using Brightgrove.Web.App.Services;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace Brightgrove.Web.App.Pages
 {
     public class IndexModel : PageModel

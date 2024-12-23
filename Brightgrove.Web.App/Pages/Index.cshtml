@@ -16,13 +16,19 @@
         <div class="col" id="pnlRecentCompetitions">
             @foreach (var match in Model.CompetitionsMatches.RecentCompetitions)
             {
-                @await Component.InvokeAsync("Competition", match)
+                @if (match.Matches.Count > 0)
+                {
+                    @await Component.InvokeAsync("Competition", match)
+                }
             }
         </div>
         <div class="col" id="pnlUpcomingCompetitions">
             @foreach (var match in Model.CompetitionsMatches.UpcomingCompetitions)
             {
-                @await Component.InvokeAsync("Competition", match)
+                @if (match.Matches.Count > 0)
+                {
+                    @await Component.InvokeAsync("Competition", match)
+                }
             }
         </div>
     </div>

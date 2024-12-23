@@ -1,5 +1,4 @@
-﻿using Brightgrove.Models.Matches;
-namespace Brightgrove.Web.App.Services
+﻿namespace Brightgrove.Web.App.Services
 {
     public interface IMatchService
     {
