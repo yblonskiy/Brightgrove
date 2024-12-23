@@ -4,7 +4,7 @@
 
 2. Brightgrove.Services.WebApi is the API application.
 
-3. rightgrove.Web.App has settings in the appsettings.json file:
+3. Brightgrove.Web.App has settings in the appsettings.json file:
 
     "WebApiServiceAgents": {
       "WebApiHost": "https://brightgroveserviceswebapi20241220221247.azurewebsites.net/api/v1/",
