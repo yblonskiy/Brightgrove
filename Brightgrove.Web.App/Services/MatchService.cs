@@ -49,7 +49,7 @@
                 .Select(s => new MatchCompetitionItem
                 {
                     Competition = s.Competition,
-                    Matches     = s.Matches.Where(x => x.Status == "FINISHED").ToList()
+                         Matches        = matches
                 })
                 .ToList();
 
