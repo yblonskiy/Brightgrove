@@ -1,6 +1,8 @@
 ﻿@page
 @model IndexModel
 
+@using Newtonsoft.Json;
+
 @{
     ViewData["Title"] = "Home page";
 }
@@ -13,23 +15,41 @@
         </div>
     </div>
     <div class="row">
-        <div class="col" id="pnlRecentCompetitions">
-            @foreach (var match in Model.CompetitionsMatches.RecentCompetitions)
-            {
-                @if (match.Matches.Count > 0)
-                {
-                    @await Component.InvokeAsync("Competition", match)
-                }
-            }
-        </div>
-        <div class="col" id="pnlUpcomingCompetitions">
-            @foreach (var match in Model.CompetitionsMatches.UpcomingCompetitions)
-            {
-                @if (match.Matches.Count > 0)
-                {
-                    @await Component.InvokeAsync("Competition", match)
-                }
-            }
-        </div>
+    
+        <template id="match-card-template">
+            <div class="match-card">
+                <div class="match-body">
+                    <div class="match-header"></div>
+                    <div class="team">
+                        <img class="team-logo" />
+                        <span class="team-name"></span>
+                        <span class="team-score"></span>
+                    </div>
+                    <div class="team">
+                        <img class="team-logo" />
+                        <span class="team-name"></span>
+                        <span class="team-score"></span>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="league-card-template">
+            <div class="league-card">
+                <div class="league-header"></div>
+                <div class="league-body">
+                    <div class="carousel-container">
+                        <div class="carousel"></div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <competition-carousel id="pnlRecentCompetitions" competitions="@JsonConvert.SerializeObject(Model.CompetitionsMatches.RecentCompetitions)" style="display:none;">
+        </competition-carousel>
+
+        <competition-carousel id="pnlUpcomingCompetitions" competitions="@JsonConvert.SerializeObject(Model.CompetitionsMatches.UpcomingCompetitions)">
+        </competition-carousel>
+      
     </div>
 </div>

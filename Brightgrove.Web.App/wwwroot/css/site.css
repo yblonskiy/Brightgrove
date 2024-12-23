@@ -32,18 +32,10 @@ body {
     -webkit-tap-highlight-color: transparent;
     margin-bottom: 60px;
 }
-.pb-3 {
-    padding-bottom: 1rem !important;
-}
-
 
 .bg-white {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
-}
-
-.mb-3 {
-    margin-bottom: 1rem !important;
 }
 
 .border-bottom {
@@ -104,6 +96,8 @@ body {
     justify-content: space-between;
     padding-top: .5rem;
     padding-bottom: .5rem;
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
 }
 
     .navbar > .container {
@@ -112,58 +106,6 @@ body {
         align-items: center;
         justify-content: space-between;
     }
-
-
-.card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .25rem;
-}
-
-.border-success {
-    border-color: #198754 !important;
-}
-
-.border-secondary {
-    border-color: #6c757d !important;
-}
-
-.card-body {
-    flex: 1 1 auto;
-    padding: 1rem 1rem;
-}
-
-.card-header {
-    padding: .5rem 1rem;
-    margin-bottom: 0;
-    background-color: rgba(0, 0, 0, .03);
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-}
-
-    .card-header:first-child {
-        border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
-    }
-
-.text-success {
-    --bs-text-opacity: 1;
-    color: rgb(25 135 84);
-}
-
-
-.row > * {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x)* .5);
-    padding-left: calc(var(--bs-gutter-x)* .5);
-    margin-top: var(--bs-gutter-y);
-}
 
 .btn {
     display: inline-block;
@@ -185,12 +127,11 @@ body {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-
 [type=button], [type=reset], [type=submit], button {
     -webkit-appearance: button;
 }
 
-button, select {
+button {
     text-transform: none;
 }
 
@@ -199,11 +140,6 @@ button, input, optgroup, select, textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-}
-
-.bg-white {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
 }
 
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
@@ -237,31 +173,21 @@ button, input, optgroup, select, textarea {
     border-color: #198754;
 }
 
-
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-.h6, h6 {
-    display: block;
-    margin-block-start: 2.33em;
-    margin-block-end: 2.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
-    font-size: 1rem;
-    line-height: 1.2;
-    font-family: var(--bs-body-font-family);
+.text-center {
+    text-align: center !important;
 }
 
-.card-subtitle {
-    margin-top: -0.25rem;
-    margin-bottom: 0;
-}
-
-.mb-2 {
-    margin-bottom: 0.5rem !important;
+.row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    margin-top: var(--bs-gutter-y);
 }
 
 .row {
@@ -278,78 +204,14 @@ button, input, optgroup, select, textarea {
     flex: 1 0 0%;
 }
 
-.col-1 {
-    flex: 0 0 auto;
-    width: 8.33333333%;
-}
-
-.col-2 {
-    flex: 0 0 auto;
-    width: 16.66666667%;
-}
-
-.col-9 {
-    flex: 0 0 auto;
-    width: 75%;
-}
-
-.text-muted {
-    --bs-text-opacity: 1;
-    color: #6c757d !important;
-}
-
-.text-center {
-    text-align: center !important;
+.mb-3 {
+    margin-bottom: 1rem !important;
 }
 
 .mb-4 {
     margin-bottom: 1.5rem !important;
 }
 
-.carousel-container {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    cursor: grab;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.3s ease;
-    position: relative;
-}
-
-.match-item-card {
-    width: 350px;
-}
-
-.carousel .match-item-card {
-    flex-shrink: 0;
-    margin-left: 15px;
-    margin-right: 15px;
-    user-select: none;
-}
-
-.team-logo {
-    width: 17px;
-    height: auto;
-    margin-top: -0.25rem;
-    margin-bottom: 0;
-    margin-bottom: 0.5rem !important;
-}
-
-.team-text {
-    margin-top: -0.25rem;
-    margin-bottom: 0;
-    margin-bottom: 0.5rem !important;
-    --bs-text-opacity: 1;
-    color: #6c757d !important;
-}
-
-.league-name {
-    margin-top: -0.25rem;
-    margin-bottom: 0;
-    margin-bottom: 1.5rem !important;
-    --bs-text-opacity: 1;
-    color: #6c757d !important;
+.pb-3 {
+    padding-bottom: 1rem !important;
 }

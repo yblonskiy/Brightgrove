@@ -11,24 +11,11 @@ builder.Services.AddScoped<IMatchService, MatchService>();
 // IHttpClientFactory
 builder.Services.AddHttpClient();
 
+// Get Application Urls settings
+var applicationUrls = builder.Configuration.GetSection("ApplicationUrls").Get<ApplicationUrls>();
+
 // Configure the HTTP request pipeline.
-if (!builder.Environment.IsDevelopment())
-{
-    builder.Services.AddCors(options =>
-    {
-        options.AddPolicy("Cors", policy =>
-        {
-            policy
-                .AllowCredentials()
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .WithExposedHeaders("Content-Disposition")
-                .WithOrigins(new string[] { "https://brightgroveserviceswebapi20241220221247.azurewebsites.net" })
-                .SetIsOriginAllowedToAllowWildcardSubdomains();
-        });
-    });
-}
-else
+if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddCors(options =>
     {
@@ -39,15 +26,8 @@ else
                 {
                     var uri = new Uri(origin);
 
-                    // Check standard azure domain names
-                    var isAllowed = uri.Scheme == Uri.UriSchemeHttps &&
-                                    (
-                                        uri.Host.EndsWith("azurewebsites.net", StringComparison.OrdinalIgnoreCase) ||
-                                        uri.Host.EndsWith("azureedge.net", StringComparison.OrdinalIgnoreCase) ||
-                                        uri.Host.EndsWith("blob.core.windows.net", StringComparison.OrdinalIgnoreCase) ||
-                                        uri.Host.EndsWith("search.windows.net", StringComparison.OrdinalIgnoreCase) ||
-                                        uri.Host.EndsWith("servicebus.windows.net", StringComparison.OrdinalIgnoreCase)
-                                    );
+                    // Check standard azure domain name
+                    var isAllowed = uri.Scheme == Uri.UriSchemeHttps && uri.Host.EndsWith("azurewebsites.net", StringComparison.OrdinalIgnoreCase);
 
                     // Check localhost
                     if (!isAllowed && builder.Environment.IsDevelopment())
@@ -59,6 +39,22 @@ else
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .WithExposedHeaders("Content-Disposition");
+        });
+    });
+}
+else
+{
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("Cors", policy =>
+        {
+            policy
+                .AllowCredentials()
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .WithExposedHeaders("Content-Disposition")
+                .WithOrigins(applicationUrls.CorsUrls)
+                .SetIsOriginAllowedToAllowWildcardSubdomains();
         });
     });
 }

@@ -46,19 +46,35 @@
             });
 
             result.RecentCompetitions = matches.Competitions
-                .Select(s => new MatchCompetitionItem
-                {
-                    Competition = s.Competition,
+                 .Select(s => {
+
+                     var competition    = s.Competition;
+                     var matches        = s.Matches.Where(x => x.Status == "FINISHED").ToList();
+
+                     matches.ForEach(e => e.MatchDate = e.UtcDate.ToLocalTime().ToString("dd.MM | HH:mm"));
+
+                     return new MatchCompetitionItem
+                     {
+                         Competition    = competition,
                          Matches        = matches
-                })
+                     };
+                 })
                 .ToList();
 
             result.UpcomingCompetitions = matches.Competitions
-               .Select(s => new MatchCompetitionItem
-               {
-                    Competition = s.Competition,
-                    Matches     = s.Matches.Where(x => x.Status == "TIMED").ToList()
-               })
+                 .Select(s => {
+
+                     var competition    = s.Competition;
+                     var matches        = s.Matches.Where(x => x.Status == "TIMED").ToList();
+
+                     matches.ForEach(e => e.MatchDate = e.UtcDate.ToLocalTime().ToString("dd.MM | HH:mm"));
+
+                     return new MatchCompetitionItem
+                     {
+                         Competition    = competition,
+                         Matches        = matches
+                     };
+                 })
                .ToList();
 
             return result;

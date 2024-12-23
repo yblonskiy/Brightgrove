@@ -8,6 +8,8 @@
 
         public DateTime UtcDate { get; set; }
 
+        public string MatchDate { get; set; }
+
         public string Status { get; set; }
 
         public int Matchday { get; set; }
