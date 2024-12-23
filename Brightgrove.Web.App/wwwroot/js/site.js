@@ -26,7 +26,7 @@ class MatchItemCard extends HTMLElement {
 
         style.textContent = `
             :host {
-                width: 320px;
+                width: 330px;
                 position: relative;
                 display: flex;
                 flex-direction: column;
